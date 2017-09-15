@@ -3,6 +3,7 @@ use strict;
 use warnings;
 
 our $VERSION = '0.001001';
+$VERSION =~ tr/_//d;
 
 use Scalar::Util ();
 use overload ();
