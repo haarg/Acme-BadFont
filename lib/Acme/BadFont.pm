@@ -5,19 +5,19 @@ use warnings;
 our $VERSION = '0.001001';
 $VERSION =~ tr/_//d;
 
-use Scalar::Util ();
+use Scalar::Util qw(dualvar looks_like_number);
 use overload ();
 
 sub import {
   overload::constant(q => sub {
     my $string = $_[1];
     my $number = $string;
-    if (Scalar::Util::looks_like_number($number)) {
+    if (looks_like_number($number)) {
       return $string;
     }
-    elsif ($number =~ tr/OoIlZzEASsGBq/0011223455689/ and Scalar::Util::looks_like_number($number)) {
+    elsif ($number =~ tr/OoIlZzEASsGBq/0011223455689/ and looks_like_number($number)) {
       $number += 0;
-      return Scalar::Util::dualvar($number, $string);
+      return dualvar($number, $string);
     }
     return $string;
   });
