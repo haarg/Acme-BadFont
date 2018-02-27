@@ -1,21 +1,20 @@
 use strict;
 use warnings FATAL => 'all';
-use 5.006;
+use 5.008001;
 
 my %META = (
   name => 'Acme-BadFont',
   license => 'perl_5',
   prereqs => {
-    configure => { requires => { } },
-    build => { requires => { } },
-    test => { requires => {
-      'Test::More' => 0,
+    configure => { requires => {
+      'ExtUtils::MakeMaker' => 0,
     } },
-    runtime => {
-      requires => {
-      },
-    },
-    develop => { requires => {
+    test => { requires => {
+      'Test::More' => '0.88',
+    } },
+    runtime => { requires => {
+      'Scalar::Util' => '1.10',
+      'perl' => '5.008001',
     } },
   },
   resources => {
