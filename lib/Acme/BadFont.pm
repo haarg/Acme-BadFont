@@ -2,7 +2,7 @@ package Acme::BadFont;
 use strict;
 use warnings;
 
-our $VERSION = '0.001001';
+our $VERSION = '1.000000';
 $VERSION =~ tr/_//d;
 
 use Scalar::Util qw(dualvar looks_like_number);
